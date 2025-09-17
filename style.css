@@ -6,29 +6,35 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 10px;
+  font-family: Arial, sans-serif;
 }
 
 .info {
   background: #191919;
   width: 100%;
-  max-width: 380px;
+  max-width: 380px;   /* أقصى عرض */
   text-align: center;
   border-radius: 30px;
   padding: 20px;
 }
 
-.big { color: #FFFFFF; }
-.color { color: #EFFF00; }
+.big { 
+  color: #FFFFFF; 
+  margin: 10px 0;
+}
+
+.color { 
+  color: #EFFF00; 
+  margin: 5px 0 15px;
+}
 
 .inst, .face, .tik, .tele, .whats {
   padding: 15px;
   border-radius: 15px;
   text-decoration: none;
   color: white;
-  display: flex;              /* أيقونة + نص جنب بعض */
-  align-items: center;        /* يظبط النص والأيقونة في النص */
-  justify-content: center;    /* يخليهم في النص */
-  gap: 10px;                  /* مسافة بين الأيقونة والنص */
+  display: block;          /* دايمًا تحت بعض */
+  text-align: center;      /* الأيقونة + النص في النص */
   margin: 12px auto;
   width: 100%;
   max-width: 280px;
@@ -38,12 +44,17 @@ body {
   transition: 0.3s;
 }
 
+/* أيقونات */
+.inst i, .face i, .tik i, .tele i, .whats i {
+  margin-right: 8px;
+}
+
 /* ألوان الأزرار */
-.inst  { background: #C13584; }
-.face  { background: #1877F2; }
-.whats { background: #25D366; }
-.tik   { background: #010101; }
-.tele  { background: #0088cc; }
+.inst  { background: #C13584; }  /* Instagram */
+.face  { background: #1877F2; }  /* Facebook */
+.whats { background: #25D366; }  /* WhatsApp */
+.tik   { background: #010101; }  /* TikTok */
+.tele  { background: #0088cc; }  /* Telegram */
 
 /* تأثير Hover */
 .inst:hover,
@@ -59,12 +70,13 @@ body {
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  max-width: 100%;
-  height: auto;
-  padding: 15px 0;
+  object-fit: cover;   /* يخلي الصورة مظبوطة من غير ما تتمدد */
+  margin-bottom: 15px;
 }
 
-/* Responsive للموبايل */
+/* ==== Responsive ==== */
+
+/* موبايل صغير */
 @media (max-width: 480px) {
   .info {
     max-width: 95%;
@@ -80,5 +92,17 @@ body {
     font-size: 14px;
     padding: 12px;
     max-width: 100%;
+  }
+}
+
+/* تابلت */
+@media (max-width: 768px) {
+  .info {
+    max-width: 90%;
+  }
+
+  .opp img {
+    width: 100px;
+    height: 100px;
   }
 }
