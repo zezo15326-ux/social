@@ -1,68 +1,84 @@
-body{    background: black;
+body {
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
- 
-  
+  padding: 10px;
 }
 
 .info {
   background: #191919;
-  width:380px ;
-  height: 650px;
+  width: 100%;
+  max-width: 380px;
   text-align: center;
-  border-radius: 30px ;
-  
-       }
-  
-  .big{color: #FFFFFF;}
-  
-  
-  .color{color: #EFFF00;}
-  
-  
-  .inst{  background:#5E5E5E;
-          padding: 13px 120px;
-          border-radius: 15px ;
-     text-decoration: none; 
-     color: white;    }
-  
-       
-  .face{background: #5E5E5E;
-          padding: 13px 120px;
-         border-radius: 15px ;
-  text-decoration: none; 
-    color: white;   }
-       
-       
-  .tik{background: #5E5E5E;
-          padding: 13px 136px;
-          border-radius: 15px ;
-        text-decoration: none; 
-     color: white;  }
-      
-      
-  .tele{background: #5E5E5E;
-          padding: 13px 126px;
-         border-radius: 15px ;
-  text-decoration: none; 
-      color: white;  }
-       
-      
-  
-  .whats{background: #5E5E5E;
-          padding: 13px 119px;
-          border-radius: 15px ;
-          text-decoration: none; 
-    
-      color: white;   }
-  
-  .opp img {border-radius: 500px ;
-    width: 150px;
-    height: 150px ;
-    padding:15px 0;
-    
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.big { color: #FFFFFF; }
+.color { color: #EFFF00; }
+
+.inst, .face, .tik, .tele, .whats {
+  padding: 15px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  display: flex;              /* أيقونة + نص جنب بعض */
+  align-items: center;        /* يظبط النص والأيقونة في النص */
+  justify-content: center;    /* يخليهم في النص */
+  gap: 10px;                  /* مسافة بين الأيقونة والنص */
+  margin: 12px auto;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* ألوان الأزرار */
+.inst  { background: #C13584; }
+.face  { background: #1877F2; }
+.whats { background: #25D366; }
+.tik   { background: #010101; }
+.tele  { background: #0088cc; }
+
+/* تأثير Hover */
+.inst:hover,
+.face:hover,
+.whats:hover,
+.tik:hover,
+.tele:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.opp img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
+  height: auto;
+  padding: 15px 0;
+}
+
+/* Responsive للموبايل */
+@media (max-width: 480px) {
+  .info {
+    max-width: 95%;
+    padding: 15px;
   }
- 
+
+  .opp img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .inst, .face, .tik, .tele, .whats {
+    font-size: 14px;
+    padding: 12px;
+    max-width: 100%;
+  }
+}
